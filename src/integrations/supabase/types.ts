@@ -14,7 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      resumes: {
+        Row: {
+          analysis_data: Json | null
+          analysis_status: string | null
+          content_type: string | null
+          created_at: string
+          file_path: string
+          file_size: number | null
+          id: string
+          original_filename: string
+          updated_at: string
+          upload_date: string
+          user_id: string | null
+        }
+        Insert: {
+          analysis_data?: Json | null
+          analysis_status?: string | null
+          content_type?: string | null
+          created_at?: string
+          file_path: string
+          file_size?: number | null
+          id?: string
+          original_filename: string
+          updated_at?: string
+          upload_date?: string
+          user_id?: string | null
+        }
+        Update: {
+          analysis_data?: Json | null
+          analysis_status?: string | null
+          content_type?: string | null
+          created_at?: string
+          file_path?: string
+          file_size?: number | null
+          id?: string
+          original_filename?: string
+          updated_at?: string
+          upload_date?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
