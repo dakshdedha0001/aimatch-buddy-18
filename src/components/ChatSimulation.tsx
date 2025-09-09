@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Bot, CheckCircle, Sparkles } from 'lucide-react';
+import { Bot, CheckCircle, Sparkles, Target } from 'lucide-react';
 
 interface ChatSimulationProps {
   onComplete: () => void;
@@ -92,9 +92,9 @@ export const ChatSimulation: React.FC<ChatSimulationProps> = ({ onComplete }) =>
       case 'process':
         return 'bg-blue-50 border-blue-200 text-blue-800';
       case 'final':
-        return 'bg-gradient-to-r from-primary/10 to-accent/10 border-primary/30 text-primary font-semibold';
+        return 'bg-green-50 border-green-200 text-green-800';
       default:
-        return 'bg-card border-border text-foreground';
+        return 'bg-white border-gray-200 text-gray-800 card-shadow';
     }
   };
 
@@ -126,9 +126,15 @@ export const ChatSimulation: React.FC<ChatSimulationProps> = ({ onComplete }) =>
               {visibleMessages.includes(message.id) && (
                 <div className="flex items-start space-x-4 animate-slide-up">
                   {/* Avatar */}
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-primary to-accent p-0.5">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-0.5">
                     <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                      <Sparkles className="w-4 h-4 text-primary" />
+                      {message.type === 'success' || message.type === 'final' ? (
+                        <CheckCircle className="w-4 h-4 text-green-600" />
+                      ) : message.type === 'process' ? (
+                        <Target className="w-4 h-4 text-blue-600 animate-pulse" />
+                      ) : (
+                        <Sparkles className="w-4 h-4 text-purple-600" />
+                      )}
                     </div>
                   </div>
 
