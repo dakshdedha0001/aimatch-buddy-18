@@ -1,24 +1,63 @@
 import React, { useState } from 'react';
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from '@clerk/clerk-react';
 import { useClerkSupabaseSync } from '@/hooks/useClerk';
 import { UploadSection } from '@/components/UploadSection';
 import { LoadingSimulation } from '@/components/LoadingSimulation';
 import { ChatSimulation } from '@/components/ChatSimulation';
 import { ResultsDashboard } from '@/components/ResultsDashboard';
 import { AboutSection } from '@/components/AboutSection';
+import { supabase } from '@/integrations/supabase/client';
 
 type AppState = 'upload' | 'loading' | 'chat' | 'results';
 
 const Index = () => {
   const [currentState, setCurrentState] = useState<AppState>('upload');
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const { user } = useUser();
   
   // Sync Clerk user with Supabase
   useClerkSupabaseSync();
 
-  const handleFileUpload = (file: File) => {
+  const handleFileUpload = async (file: File) => {
+    if (!user) return;
+    
     setUploadedFile(file);
     setCurrentState('loading');
+    
+    try {
+      // Create unique file path
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${user.id}_${Date.now()}.${fileExt}`;
+      const filePath = `resumes/${fileName}`;
+      
+      // Upload file to Supabase Storage
+      const { error: uploadError } = await supabase.storage
+        .from('resumes')
+        .upload(filePath, file);
+      
+      if (uploadError) {
+        console.error('Upload error:', uploadError);
+        return;
+      }
+      
+      // Save resume record to database
+      const { error: dbError } = await supabase
+        .from('resumes')
+        .insert({
+          clerk_user_id: user.id,
+          original_filename: file.name,
+          file_path: filePath,
+          file_size: file.size,
+          content_type: file.type,
+          analysis_status: 'pending'
+        });
+      
+      if (dbError) {
+        console.error('Database error:', dbError);
+      }
+    } catch (error) {
+      console.error('Error uploading resume:', error);
+    }
   };
 
   const handleLoadingComplete = () => {
