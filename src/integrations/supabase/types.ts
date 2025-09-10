@@ -14,10 +14,44 @@ export type Database = {
   }
   public: {
     Tables: {
+      profiles: {
+        Row: {
+          clerk_user_id: string
+          created_at: string
+          email: string | null
+          first_name: string | null
+          id: string
+          image_url: string | null
+          last_name: string | null
+          updated_at: string
+        }
+        Insert: {
+          clerk_user_id: string
+          created_at?: string
+          email?: string | null
+          first_name?: string | null
+          id?: string
+          image_url?: string | null
+          last_name?: string | null
+          updated_at?: string
+        }
+        Update: {
+          clerk_user_id?: string
+          created_at?: string
+          email?: string | null
+          first_name?: string | null
+          id?: string
+          image_url?: string | null
+          last_name?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       resumes: {
         Row: {
           analysis_data: Json | null
           analysis_status: string | null
+          clerk_user_id: string | null
           content_type: string | null
           created_at: string
           file_path: string
@@ -31,6 +65,7 @@ export type Database = {
         Insert: {
           analysis_data?: Json | null
           analysis_status?: string | null
+          clerk_user_id?: string | null
           content_type?: string | null
           created_at?: string
           file_path: string
@@ -44,6 +79,7 @@ export type Database = {
         Update: {
           analysis_data?: Json | null
           analysis_status?: string | null
+          clerk_user_id?: string | null
           content_type?: string | null
           created_at?: string
           file_path?: string
