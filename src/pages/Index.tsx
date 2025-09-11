@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from '@clerk/clerk-react';
 import { useClerkSupabaseSync } from '@/hooks/useClerk';
+import { usePageTitle } from '@/hooks/usePageTitle';
 import { UploadSection } from '@/components/UploadSection';
 import { LoadingSimulation } from '@/components/LoadingSimulation';
 import { ChatSimulation } from '@/components/ChatSimulation';
 import { ResultsDashboard } from '@/components/ResultsDashboard';
 import { AboutSection } from '@/components/AboutSection';
+import { Footer } from '@/components/Footer';
 import { supabase } from '@/integrations/supabase/client';
 
 type AppState = 'upload' | 'loading' | 'chat' | 'results';
@@ -17,6 +19,9 @@ const Index = () => {
   
   // Sync Clerk user with Supabase
   useClerkSupabaseSync();
+  
+  // Update page title based on auth state and current screen
+  usePageTitle(currentState);
 
   const handleFileUpload = async (file: File) => {
     if (!user) return;
@@ -25,10 +30,10 @@ const Index = () => {
     setCurrentState('loading');
     
     try {
-      // Create unique file path
+      // Create unique file path with user ID folder structure for RLS
       const fileExt = file.name.split('.').pop();
-      const fileName = `${user.id}_${Date.now()}.${fileExt}`;
-      const filePath = `resumes/${fileName}`;
+      const fileName = `${Date.now()}.${fileExt}`;
+      const filePath = `${user.id}/${fileName}`;
       
       // Upload file to Supabase Storage
       const { error: uploadError } = await supabase.storage
@@ -55,6 +60,8 @@ const Index = () => {
       if (dbError) {
         console.error('Database error:', dbError);
       }
+      
+      console.log('Resume uploaded successfully!');
     } catch (error) {
       console.error('Error uploading resume:', error);
     }
@@ -214,6 +221,9 @@ const Index = () => {
 
       {/* About section */}
       {currentState === 'upload' && <AboutSection />}
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
