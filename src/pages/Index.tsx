@@ -80,7 +80,7 @@ const Index = () => {
       
       {/* Header with authentication */}
       <header className="relative z-20 flex justify-between items-center p-6">
-        <h1 className="text-2xl font-bold text-gray-800">Shikshasetu-AI</h1>
+        <h1 className="text-2xl font-bold text-gray-800">InternMitra-AI</h1>
         <div className="flex items-center gap-4">
           <SignedOut>
             <SignInButton mode="modal">
@@ -106,7 +106,7 @@ const Index = () => {
           {/* Demo/Preview content for non-authenticated users */}
           <div className="max-w-6xl mx-auto px-6 py-12">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">Welcome to Shikshasetu-AI</h2>
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">Welcome to InternMitra-AI</h2>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
                 Experience AI-powered career guidance and skill assessment. Upload your resume to get personalized 
                 recommendations for learning paths, career opportunities, and skill development.
@@ -130,7 +130,7 @@ const Index = () => {
             {currentState === 'upload' && (
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">How Shikshasetu-AI Works</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6">How InternMitra-AI Works</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
                       <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">1</div>
