@@ -7,6 +7,7 @@ import { LoadingSimulation } from '@/components/LoadingSimulation';
 import { ChatSimulation } from '@/components/ChatSimulation';
 import { ResultsDashboard } from '@/components/ResultsDashboard';
 import { AboutSection } from '@/components/AboutSection';
+import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -85,30 +86,11 @@ const Index = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
       
-      {/* Header with authentication */}
-      <header className="relative z-20 flex justify-between items-center p-6">
-        <h1 className="text-2xl font-bold text-gray-800">InternMitra-AI</h1>
-        <div className="flex items-center gap-4">
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                Sign In
-              </button>
-            </SignInButton>
-            <SignUpButton mode="modal">
-              <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
-                Sign Up
-              </button>
-            </SignUpButton>
-          </SignedOut>
-          <SignedIn>
-            <UserButton afterSignOutUrl="/" />
-          </SignedIn>
-        </div>
-      </header>
+      {/* Functional Header */}
+      <Header currentState={currentState} onStateChange={setCurrentState} />
       
       {/* Main content */}
-      <div className="relative z-10">
+      <div className="relative z-10 pt-4">
         <SignedOut>
           {/* Demo/Preview content for non-authenticated users */}
           <div className="max-w-6xl mx-auto px-6 py-12">

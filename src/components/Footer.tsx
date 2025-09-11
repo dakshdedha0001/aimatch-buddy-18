@@ -1,4 +1,5 @@
 import React from 'react';
+import { Github, Linkedin, Twitter, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -16,33 +17,81 @@ export const Footer = () => {
           {/* Features */}
           <div>
             <h4 className="font-semibold text-gray-800 mb-4">Features</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>Resume Analysis</li>
-              <li>Skill Assessment</li>
-              <li>Career Guidance</li>
-              <li>Learning Paths</li>
+            <ul className="space-y-2">
+              <li><a href="#resume-analysis" className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Resume Analysis</a></li>
+              <li><a href="#skill-assessment" className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Skill Assessment</a></li>
+              <li><a href="#career-guidance" className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Career Guidance</a></li>
+              <li><a href="#learning-paths" className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Learning Paths</a></li>
             </ul>
           </div>
           
           {/* Support */}
           <div>
             <h4 className="font-semibold text-gray-800 mb-4">Support</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>Help Center</li>
-              <li>Contact Us</li>
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
+            <ul className="space-y-2">
+              <li>
+                <button 
+                  onClick={() => window.open('mailto:support@internmitra-ai.com', '_blank')}
+                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer flex items-center gap-1"
+                >
+                  <Mail className="w-3 h-3" />
+                  Contact Us
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => window.open('tel:+1-555-0123', '_blank')}
+                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer flex items-center gap-1"
+                >
+                  <Phone className="w-3 h-3" />
+                  Help Center
+                </button>
+              </li>
+              <li><a href="#privacy" className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Privacy Policy</a></li>
+              <li><a href="#terms" className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Terms of Service</a></li>
             </ul>
           </div>
           
           {/* Connect */}
           <div>
             <h4 className="font-semibold text-gray-800 mb-4">Connect</h4>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>LinkedIn</li>
-              <li>Twitter</li>
-              <li>GitHub</li>
-              <li>Blog</li>
+            <ul className="space-y-2">
+              <li>
+                <button 
+                  onClick={() => window.open('https://linkedin.com/company/internmitra-ai', '_blank')}
+                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer flex items-center gap-1"
+                >
+                  <Linkedin className="w-3 h-3" />
+                  LinkedIn
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => window.open('https://twitter.com/internmitra_ai', '_blank')}
+                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer flex items-center gap-1"
+                >
+                  <Twitter className="w-3 h-3" />
+                  Twitter
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => window.open('https://github.com/internmitra-ai', '_blank')}
+                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer flex items-center gap-1"
+                >
+                  <Github className="w-3 h-3" />
+                  GitHub
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => window.open('https://blog.internmitra-ai.com', '_blank')}
+                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors cursor-pointer flex items-center gap-1"
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  Blog
+                </button>
+              </li>
             </ul>
           </div>
         </div>
