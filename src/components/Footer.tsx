@@ -8,9 +8,9 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-1">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">InternMitra-AI</h3>
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Avsar</h3>
             <p className="text-gray-600 text-sm">
-              Empowering careers with AI-powered resume analysis and personalized guidance.
+              Where talents meet opportunities through AI-powered matching and personalized guidance.
             </p>
           </div>
           
@@ -98,7 +98,7 @@ export const Footer = () => {
         
         <div className="border-t border-gray-200 mt-8 pt-6 text-center">
           <p className="text-sm text-gray-600">
-            © 2025 InternMitra-AI. All rights reserved. Powered by AI for your career success.
+            © 2025 Avsar. All rights reserved. Where talents meet opportunities.
           </p>
         </div>
       </div>

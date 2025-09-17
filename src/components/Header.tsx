@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ currentState, onStateChange }) =
               onClick={() => onStateChange('upload')}
               className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
             >
-              InternMitra-AI
+              Avsar
             </button>
           </div>
 

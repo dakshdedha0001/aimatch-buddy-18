@@ -38,7 +38,7 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ onFileUpload }) =>
         {/* Animated title */}
         <div className="relative mb-20">
           <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-8 animate-float">
-            InternMitra-AI
+            Avsar
           </h1>
           <div className="absolute -top-4 right-8 animate-pulse-glow">
             <Sparkles className="w-7 h-7 text-primary" />
@@ -46,7 +46,7 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ onFileUpload }) =>
         </div>
 
         <p className="text-lg md:text-xl text-gray-700 mb-24 max-w-4xl mx-auto leading-relaxed font-medium">
-          Bridging Students with Opportunities through AI-Powered Internship Matching
+          Where Talents Meet Opportunities
         </p>
 
         {/* Upload area */}

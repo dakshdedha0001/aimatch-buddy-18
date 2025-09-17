@@ -12,7 +12,7 @@ export const AboutSection: React.FC = () => {
           {/* Branding Line */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-gray-900">
-              <span className="gradient-text">InternMitra-AI</span> – Bridging Students with AI-Powered Internship Matching
+              <span className="gradient-text">Avsar</span> – Where Talents Meet Opportunities
             </h3>
             
             {/* About Text */}
@@ -60,7 +60,7 @@ export const AboutSection: React.FC = () => {
       <div className="py-6 px-6 bg-gray-100/50 border-t border-gray-200/60">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           <p className="text-sm text-gray-600">
-            © 2025 InternMitra-AI. All Rights Reserved.
+            © 2025 Avsar. All Rights Reserved.
           </p>
           <p className="text-sm text-gray-500 flex items-center">
             Demo prototype inspired by SIH Problem Statement 25033
