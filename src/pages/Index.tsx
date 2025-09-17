@@ -95,7 +95,7 @@ const Index = () => {
           {/* Demo/Preview content for non-authenticated users */}
           <div className="max-w-6xl mx-auto px-6 py-12">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">Welcome to InternMitra-AI</h2>
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">Welcome to Avsar</h2>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
                 Experience AI-powered career guidance and skill assessment. Upload your resume to get personalized 
                 recommendations for learning paths, career opportunities, and skill development.
