@@ -18,10 +18,13 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 230 15% 15%;
 
-    /* Blue to Purple Gradient System */
-    --primary: 240 100% 65%;
+    /* Avsar Brand Colors - Blue to Teal to Green */
+    --primary: 220 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 250 85% 75%;
+    --primary-glow: 195 100% 55%;
+    --avsar-blue: 220 100% 50%;
+    --avsar-teal: 195 100% 50%;
+    --avsar-green: 120 60% 50%;
     
     --secondary: 220 25% 95%;
     --secondary-foreground: 230 15% 25%;
@@ -29,23 +32,23 @@ All colors MUST be HSL.
     --muted: 220 20% 94%;
     --muted-foreground: 220 15% 45%;
 
-    --accent: 260 100% 85%;
-    --accent-foreground: 230 15% 15%;
+    --accent: 195 100% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 25% 88%;
     --input: 220 25% 92%;
-    --ring: 240 100% 65%;
+    --ring: 220 100% 50%;
 
     /* Design System Extensions */
-    --gradient-primary: linear-gradient(135deg, hsl(220 100% 85%), hsl(0 0% 98%), hsl(260 100% 88%));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--avsar-blue)), hsl(var(--avsar-teal)));
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 30% 96%));
-    --gradient-glow: linear-gradient(135deg, hsl(240 100% 65% / 0.1), hsl(260 100% 75% / 0.1));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--avsar-teal) / 0.1), hsl(var(--avsar-green) / 0.1));
     
     --shadow-neumorphic: 8px 8px 16px hsl(220 25% 85%), -8px -8px 16px hsl(0 0% 100%);
-    --shadow-glow: 0 0 30px hsl(240 100% 65% / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--avsar-teal) / 0.3);
     --shadow-card: 0 4px 20px hsl(220 25% 80% / 0.4);
 
     --radius: 1rem;
@@ -112,7 +115,7 @@ All colors MUST be HSL.
   }
 
   body {
-    background: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 30% 98%), hsl(240 50% 96%));
+    background: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 30% 98%), hsl(195 50% 96%));
     @apply text-foreground min-h-screen;
   }
 }
