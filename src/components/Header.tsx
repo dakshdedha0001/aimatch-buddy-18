@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({ currentState, onStateChange }) =
   ];
 
   return (
-    <header className="relative z-20 bg-white/90 backdrop-blur-sm border-b border-gray-200 sticky top-0">
+    <header className="relative z-20 bg-white border-b border-gray-200 sticky top-0">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
