@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from '@clerk/clerk-react';
 import { Menu, X, Home, FileText, BarChart3, Settings, HelpCircle } from 'lucide-react';
+import avsarLogo from '@/assets/avsar-logo.png';
 
 interface HeaderProps {
   currentState: string;
@@ -70,6 +71,11 @@ export const Header: React.FC<HeaderProps> = ({ currentState, onStateChange }) =
             
             <SignedIn>
               <div className="flex items-center gap-3">
+                <img 
+                  src={avsarLogo} 
+                  alt="Avsar Logo" 
+                  className="w-8 h-8 drop-shadow-sm"
+                />
                 {user && (
                   <div className="hidden sm:block text-sm text-gray-600">
                     Welcome, {user.firstName || user.username || 'User'}!

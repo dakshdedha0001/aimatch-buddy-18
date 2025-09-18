@@ -84,28 +84,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Background with subtle logo pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-teal-50/30">
-        {/* Subtle logo pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `url(${avsarLogo})`,
-            backgroundSize: '200px 200px',
-            backgroundRepeat: 'repeat',
-            backgroundPosition: 'center'
-          }}
-        />
-      </div>
-      
-      {/* Prominent logo in top-right corner */}
-      <div className="absolute top-6 right-6 z-20 hidden md:block">
-        <img 
-          src={avsarLogo} 
-          alt="Avsar Logo" 
-          className="w-24 h-24 drop-shadow-lg hover:scale-105 transition-transform duration-300"
-        />
-      </div>
+      {/* Clean background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-teal-50/30" />
       
       {/* Functional Header */}
       <Header currentState={currentState} onStateChange={setCurrentState} />
