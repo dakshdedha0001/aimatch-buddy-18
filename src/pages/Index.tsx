@@ -96,8 +96,8 @@ const Index = () => {
           {/* Demo/Preview content for non-authenticated users */}
           <div className="max-w-6xl mx-auto px-6 py-12">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">Welcome to Avsar</h2>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Welcome to Avsar</h2>
+              <p className="text-xl text-gray-800 mb-8 max-w-3xl mx-auto">
                 Experience AI-powered career guidance and skill assessment. Upload your resume to get personalized 
                 recommendations for learning paths, career opportunities, and skill development.
               </p>
@@ -120,27 +120,27 @@ const Index = () => {
             {currentState === 'upload' && (
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">How InternMitra-AI Works</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">How Avsar Works</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
                       <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">1</div>
                       <div>
-                        <h4 className="font-semibold text-gray-800">Upload Your Resume</h4>
-                        <p className="text-gray-600">Simply upload your resume in PDF format</p>
+                        <h4 className="font-semibold text-gray-900">Upload Your Resume</h4>
+                        <p className="text-gray-800">Simply upload your resume in PDF format</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">2</div>
                       <div>
-                        <h4 className="font-semibold text-gray-800">AI Analysis</h4>
-                        <p className="text-gray-600">Our AI analyzes your skills, experience, and career trajectory</p>
+                        <h4 className="font-semibold text-gray-900">AI Analysis</h4>
+                        <p className="text-gray-800">Our AI analyzes your skills, experience, and career trajectory</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
                       <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">3</div>
                       <div>
-                        <h4 className="font-semibold text-gray-800">Personalized Guidance</h4>
-                        <p className="text-gray-600">Get tailored recommendations for career growth and learning</p>
+                        <h4 className="font-semibold text-gray-900">Personalized Guidance</h4>
+                        <p className="text-gray-800">Get tailored recommendations for career growth and learning</p>
                       </div>
                     </div>
                   </div>
@@ -151,8 +151,8 @@ const Index = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Ready to Start?</h3>
-                  <p className="text-gray-600 mb-6">Sign up to upload your resume and unlock personalized AI insights</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Ready to Start?</h3>
+                  <p className="text-gray-800 mb-6">Sign up to upload your resume and unlock personalized AI insights</p>
                   <SignUpButton mode="modal">
                     <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                       Sign Up Now
@@ -165,8 +165,8 @@ const Index = () => {
             {currentState === 'results' && (
               <div>
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Demo Results Dashboard</h3>
-                  <p className="text-gray-600">This is a preview of what you'll see after uploading your resume</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Demo Results Dashboard</h3>
+                  <p className="text-gray-800">This is a preview of what you'll see after uploading your resume</p>
                   <button 
                     onClick={() => setCurrentState('upload')}
                     className="mt-4 text-blue-600 hover:text-blue-700 underline"

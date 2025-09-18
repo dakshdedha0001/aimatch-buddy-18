@@ -17,10 +17,10 @@ export const AboutSection: React.FC = () => {
             
             {/* About Text */}
             <div className="max-w-3xl mx-auto space-y-2">
-              <p className="text-base text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-900 leading-relaxed">
                 Our intelligent platform leverages advanced AI algorithms to match students with their ideal internship opportunities.
               </p>
-              <p className="text-base text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-900 leading-relaxed">
                 Built with fairness and transparency in mind, ensuring equal opportunities for all students through smart reservation policies.
               </p>
             </div>
