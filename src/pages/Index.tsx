@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser, useClerk } from '@clerk/clerk-react';
 import { useClerkSupabaseSync } from '@/hooks/useClerk';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import { UploadSection } from '@/components/UploadSection';
@@ -18,6 +18,7 @@ const Index = () => {
   const [currentState, setCurrentState] = useState<AppState>('upload');
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const { user } = useUser();
+  const { loaded: clerkLoaded } = useClerk();
   
   // Sync Clerk user with Supabase
   useClerkSupabaseSync();
@@ -81,6 +82,18 @@ const Index = () => {
     setCurrentState('upload');
     setUploadedFile(null);
   };
+
+  // Show loading while Clerk is initializing
+  if (!clerkLoaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50/30 via-white to-teal-50/30">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600 font-medium">Loading Avsar...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen relative overflow-hidden">

@@ -11,7 +11,18 @@ if (!PUBLISHABLE_KEY) {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <ClerkProvider 
+      publishableKey={PUBLISHABLE_KEY} 
+      afterSignOutUrl="/"
+      appearance={{
+        baseTheme: undefined,
+        variables: { colorPrimary: '#3B82F6' }
+      }}
+      localization={{
+        signIn: { start: { title: 'Sign in to Avsar' } },
+        signUp: { start: { title: 'Create your Avsar account' } }
+      }}
+    >
       <App />
     </ClerkProvider>
   </StrictMode>
